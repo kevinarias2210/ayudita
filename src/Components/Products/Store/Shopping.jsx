@@ -9,10 +9,8 @@ function Shopping() {
   const products = useSelector((state) => state.cart.products);
 
   const deleteItem = product => () => {
-    console.log(product, 'sss')
     const productList = products.filter(item => item.id !== product.id);
 
-    console.log(productList)
     dispatch(add(productList));
   }
 
