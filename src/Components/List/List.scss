@@ -17,8 +17,23 @@
         justify-content: center;
     }
     .sho{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
         font-size: 2.3rem;
         padding: 50px;
+    }
+    .del{
+        cursor: pointer;
+        background: transparent;
+        width: 50px;
+    }
+
+    .del figure {
+        width: 100%;
+    }
+
+    .del figure img{
+        width: 100%;
     }
 }
 
@@ -46,12 +61,6 @@
         width: 26px;
     }
 
-    .del {
-        width:auto;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
     .sho{
         padding: 10px;
         font-size: 1.3rem

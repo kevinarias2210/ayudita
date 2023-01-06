@@ -9,22 +9,21 @@ function Shopping() {
   console.log('Licores', products);
 
   return (
-    <div className="sho">
+    <div>
       {products.map((item, index) => (
-        <p key={`itemProduct-${index.toString()}`}>
-          <br />
+        <div  className="sho" key={`itemProduct-${index.toString()}`}>
           <button className="del">
-            <img src={eliminar} className="eli" />
+            <figure>
+              <img src={eliminar} className="eli" />
+            </figure>
           </button>
           <span>{item.Solicitadas} Und. Solicitadas</span>
           <span>{item.nameProduct}</span>
           <span>({item.cantidad})</span>
           <span>
-            {' '}
-            <br />
             Sub-Total $ {item.Solicitadas * item.valorUnidad}
           </span>
-        </p>
+        </div>
       ))}
     </div>
   );

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { List } from './Components/List/List';
 import Home from './Components/Home'
-import './App.css'
+import './App.scss';
 
 function App() {
   const [count, setCount] = useState(0)

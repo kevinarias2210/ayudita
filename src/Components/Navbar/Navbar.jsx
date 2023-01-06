@@ -1,9 +1,9 @@
 import React from "react";
-import Navabar from "./Navbar.scss"
 import { useState } from "react";
 import {Beers} from "../Products/ProductsBeer";
 import {Liqueurs} from "../Products/ProductsLiqueur";
 import {Varios} from "../Products/ProductsVarius";
+import "./Navbar.scss"
 
 function Nav (){
     const [beer, closeBeer] = useState (false);
