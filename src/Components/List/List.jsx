@@ -8,10 +8,9 @@ import './List.scss';
 export const List = () => {
   const productos = useSelector((state) => state.cart.products);
 
-  console.log(productos)
+  const totalConSolicitadas = (product) => product.valorUnidad * product.Solicitadas;
 
-  const totalConSolicitadas = (product) =>
-    product.valorUnidad * product.Solicitadas;
+  const total = productos.reduce((acumulador, product) => acumulador + totalConSolicitadas(product), 0)
 
   return (
     <section>
@@ -23,14 +22,10 @@ export const List = () => {
             <b>Total a Pagar </b> &nbsp; ${' '}
           </label>
           <div>
-            {productos.reduce(
-              (acumulador, product) =>
-                acumulador + totalConSolicitadas(product),
-              0
-            )}
+            {total}
           </div>
         </section>
-        <Buy />
+        <Buy productos={productos} total={total} totalConSolicitadas={totalConSolicitadas} />
       </section>
       <Footer />
     </section>
