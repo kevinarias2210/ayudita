@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import './Styles.scss';
 import addCar from './Store/add/add.png';
@@ -6,8 +6,9 @@ import { info } from './Store/data';
 import { add } from './Store/carSlice';
 
 export const Beers = () => {
-  const { beer } = info;
+  const beer = info.filter(item => item.type === 'beer');
   const Dispatch = useDispatch();
+  const products = useSelector((state) => state.cart.products);
 
   const [productsLicors, setProductsLicors] = useState(beer);
 
@@ -23,7 +24,6 @@ export const Beers = () => {
   return (
     <section className="products">
       {productsLicors.map((item) => (
-        <>
           <article key={item.id} className="cartProduct">
             <img
               src={`../imgs/beer/${item.img}`}
@@ -39,7 +39,7 @@ export const Beers = () => {
             </div>
             <button
               onClick={() => {
-                Dispatch(add(item));
+                Dispatch(add([...products, item]));
               }}
               className="btn1"
             >
@@ -54,7 +54,6 @@ export const Beers = () => {
               </p>
             </div>
           </article>
-        </>
       ))}
     </section>
   );

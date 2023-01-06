@@ -8,6 +8,8 @@ import './List.scss';
 export const List = () => {
   const productos = useSelector((state) => state.cart.products);
 
+  console.log(productos)
+
   const totalConSolicitadas = (product) =>
     product.valorUnidad * product.Solicitadas;
 
