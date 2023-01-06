@@ -1,11 +1,8 @@
 import React, {useState} from "react";
-import Buy from "./Buy.scss";
 import davi from "./Img/davi.png";
 import dinero from "./Img/dinero.png";
 import nequi from "./Img/nequi.png";
 import tarjetas from "./Img/tarjetas.png";
-import List from "../List/List"
-import Footer from "../Footer/Footer"
 
 export default function Buys (){
     const [name, setName] = useState("");
